@@ -1,0 +1,472 @@
+<html lang="ru"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>medline24 | Врач на дом в Шымкенте — 24/7 за 30 минут</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --primary:#1a73e8;--primary-dark:#0d5bbf;--dark:#0f172a;
+      --muted:#475569;--light:#f8fafc;--border:#e2e8f0;
+      --shadow:0 10px 30px rgba(2,6,23,.07);--radius:24px;
+    }
+    body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .btn{background:var(--primary);color:#fff;padding:14px 26px;border-radius:999px;font-weight:600;display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;transition:.2s;box-shadow:0 6px 16px rgba(26,115,232,.25)}
+    .btn:hover{background:var(--primary-dark);transform:translateY(-2px)}
+    .btn i{color:inherit}
+    .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);box-shadow:none}
+    .btn-outline:hover{background:var(--primary);color:#fff}
+    .btn-white{background:#fff;color:var(--dark)}
+    
+    .top-bar{background:var(--light);border-bottom:1px solid var(--border);font-size:.9rem;padding:10px 0}
+    .top-bar .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .badge-review{background:#eef2ff;color:#3730a3;padding:6px 14px;border-radius:999px;font-weight:600;display:flex;align-items:center;gap:6px}
+    
+    header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.4rem;color:var(--dark)}
+    .logo i{color:var(--primary);font-size:1.6rem}
+    .nav-right{display:flex;align-items:center;gap:18px}
+    .city-switch{display:flex;align-items:center;gap:8px;background:#f8fafc;padding:6px 12px;border-radius:12px;border:1px solid var(--border)}
+    .city-switch i{color:var(--primary)}
+    #citySelect{border:none;background:transparent;font-weight:600;font-family:inherit;outline:none;cursor:pointer}
+    .nav-links{display:flex;gap:24px;align-items:center}
+    .nav-links a{font-weight:500;color:var(--muted);transition:.2s}
+    .nav-links a:hover{color:var(--dark)}
+    .hamburger{display:none;font-size:1.6rem;cursor:pointer;color:var(--dark)}
+    
+    .hero{padding:56px 0}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+    .urgent{display:inline-flex;align-items:center;gap:8px;background:#fff1f0;color:#d93025;padding:8px 16px;border-radius:999px;font-weight:700;font-size:.9rem;margin-bottom:18px;border:1px solid #fee2e2}
+    h1{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+    .hero p{font-size:1.15rem;color:var(--muted);margin-bottom:24px}
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}
+    .tag{background:#f1f5f9;padding:8px 16px;border-radius:999px;font-weight:500;display:flex;align-items:center;gap:8px;border:1px solid var(--border)}
+    .phone{display:flex;align-items:center;gap:12px;margin:24px 0}
+    .phone-number{font-size:1.8rem;font-weight:800;color:var(--primary);letter-spacing:-.5px}
+    .hero-img{position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-img img{width:100%;height:480px;object-fit:cover}
+    .hero-card{position:absolute;bottom:20px;left:20px;right:20px;background:#fff;padding:18px;border-radius:20px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px}
+    .hero-card i{font-size:2rem;color:var(--primary)}
+    
+    section{padding:72px 0;border-bottom:1px solid var(--border)}
+    .section-title{text-align:center;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:12px;letter-spacing:-.01em}
+    .section-sub{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 44px}
+    
+    .symptoms{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .symptom{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.03)}
+    .symptom:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cbd5e1}
+    .symptom-num{font-size:2.8rem;font-weight:800;color:var(--primary);opacity:.2;line-height:1;margin-bottom:8px}
+    .symptom h3{font-size:1.15rem;margin-bottom:8px}
+    .symptom p{color:var(--muted);font-size:.95rem}
+    
+    .features{background:var(--light)}
+    .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:32px}
+    .feature{text-align:center;padding:28px;background:#fff;border-radius:var(--radius);border:1px solid var(--border)}
+    .feature i{font-size:2.2rem;color:var(--primary);margin-bottom:14px}
+    .feature h3{margin-bottom:8px;font-size:1.1rem}
+    
+    .doctors{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px}
+    .doctor{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:.25s}
+    .doctor:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .doctor img{width:130px;height:130px;border-radius:50%;object-fit:cover;margin:0 auto 16px;border:4px solid #eef2ff}
+    .doctor h3{font-size:1.15rem;margin-bottom:6px}
+    .doctor p{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+    .doctor-badge{display:inline-flex;align-items:center;gap:6px;background:#f1f5f9;padding:6px 12px;border-radius:999px;font-size:.85rem;font-weight:500}
+    
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+    .service{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;gap:18px;align-items:flex-start;transition:.2s}
+    .service:hover{box-shadow:var(--shadow)}
+    .service i{font-size:1.8rem;color:var(--primary);flex-shrink:0;margin-top:2px}
+    
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:40px}
+    .step{text-align:center;position:relative}
+    .step-num{width:48px;height:48px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;margin:0 auto 14px;box-shadow:0 6px 16px rgba(26,115,232,.3)}
+    
+    .trust{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .trust img{border-radius:28px;box-shadow:var(--shadow);height:420px;object-fit:cover;width:100%}
+    .trust-list{list-style:none;margin-top:20px;display:grid;gap:14px}
+    .trust-list li{display:flex;gap:12px;align-items:flex-start}
+    .trust-list i{color:var(--primary);margin-top:3px}
+    
+    .sick{background:linear-gradient(135deg,#eef2ff 0%,#dbeafe 100%);border-radius:32px;padding:48px;text-align:center}
+    .sick i{font-size:3rem;color:var(--primary);margin-bottom:16px}
+    
+    .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+    .review{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 4px 12px rgba(0,0,0,.03)}
+    .review-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .review-header img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+    .stars{color:#f59e0b;font-size:.9rem}
+    .review p{color:var(--muted);font-size:.95rem}
+    .review-tag{margin-top:12px;display:inline-flex;align-items:center;gap:6px;background:#fef3c7;color:#92400e;padding:5px 10px;border-radius:999px;font-size:.8rem;font-weight:600}
+    
+    .faq{max-width:820px;margin:0 auto}
+    .faq-item{background:#fff;border:1px solid var(--border);border-radius:16px;margin-bottom:12px;overflow:hidden}
+    .faq-q{padding:20px 22px;font-weight:600;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .faq-a{padding:0 22px 20px;color:var(--muted);display:none;border-top:1px solid var(--border);padding-top:16px}
+    .faq-a.show{display:block}
+    
+    footer{background:var(--dark);color:#cbd5e1;padding:56px 0 24px}
+    .footer-cta{text-align:center;margin-bottom:40px}
+    .footer-phone{font-size:2rem;font-weight:800;color:#fff;margin:12px 0}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin:40px 0;padding-top:32px;border-top:1px solid #1e293b}
+    .footer-grid div{font-size:.92rem}
+    
+    .mobile-cta{position:fixed;bottom:20px;right:20px;z-index:90;display:none}
+    .mobile-cta .btn{padding:14px 20px;box-shadow:0 8px 24px rgba(0,0,0,.25);background:#25D366}
+    .mobile-cta .btn:hover{background:#1ebe5d}
+    
+    .admin-btn{position:fixed;bottom:20px;left:20px;z-index:90;background:#0f172a;color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);opacity:.7}
+    .admin-btn:hover{opacity:1}
+    
+    @media(max-width:960px){
+      .hero-grid{grid-template-columns:1fr;gap:32px}
+      .hero-img img{height:360px}
+      .trust{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+    @media(max-width:768px){
+      .nav-links{position:fixed;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--border);box-shadow:var(--shadow);transform:translateY(-120%);opacity:0;transition:.3s;pointer-events:none;z-index:99}
+      .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;display:flex}
+      .hamburger{display:block}
+      .top-bar .container{justify-content:center}
+      section{padding:56px 0}
+      .mobile-cta{display:block}
+      .city-switch{order:-1}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div><i class="fas fa-headset"></i> Диспетчер 24/7 — проконсультируем бесплатно</div>
+    <div class="badge-review"><i class="fas fa-star"></i> 1000+ отзывов · 4.9 в 2ГИС</div>
+    <a href="tel:87003263535" class="btn" style="padding:8px 16px;font-size:.85rem"><i class="fas fa-phone"></i> 8 (700) 326-35-35</a>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="#" class="logo"><i class="fas fa-heart-pulse"></i> medline24</a>
+      <div class="nav-right">
+        <div class="city-switch">
+          <i class="fas fa-location-dot"></i>
+          <select id="citySelect"><option value="almaty">Алматы</option><option value="astana">Астана</option><option value="shymkent">Шымкент</option></select>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="#services">Услуги</a>
+          <a href="#doctors">Врачи</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contacts">Контакты</a>
+          <a href="tel:87003263535" class="btn btn-outline" style="padding:10px 20px">Вызвать врача</a>
+        </div>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="urgent"><i class="fas fa-bolt"></i> Приезд за 30 минут <span data-city-arrival="">по Шымкенту</span></span>
+        <h1>Врач на дом круглосуточно</h1>
+        <p>Приезжаем ночью и в выходные. Кардиолог, невролог, терапевт, педиатр, хирург — с оборудованием. Диагностика, лечение и сопровождение до выздоровления.</p>
+        <div class="tags">
+          <span class="tag"><i class="fas fa-heartbeat"></i> Кардиолог</span>
+          <span class="tag"><i class="fas fa-brain"></i> Невропатолог</span>
+          <span class="tag"><i class="fas fa-child"></i> Педиатр</span>
+          <span class="tag"><i class="fas fa-user-doctor"></i> Терапевт</span>
+          <span class="tag"><i class="fas fa-scissors"></i> Хирург</span>
+        </div>
+        <div class="phone">
+          <i class="fas fa-phone" style="color:var(--primary);font-size:1.4rem"></i>
+          <div>
+            <div style="font-size:.85rem;color:var(--muted)">Звоните прямо сейчас</div>
+            <div class="phone-number">8 (700) 326-35-35</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="tel:87003263535" class="btn"><i class="fas fa-truck-medical"></i> Вызвать врача на дом</a>
+          <a href="https://wa.me/77474472693?text=Здравствуйте%2C%20нужен%20врач%20на%20дом%20%D0%B2%20%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82%D0%B5" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&amp;w=1200&amp;auto=format" alt="Врач на дом">
+        <div class="hero-card">
+          <i class="fas fa-shield-halved"></i>
+          <div>
+            <strong>Лицензия МЗ РК</strong><br>
+            <span style="color:var(--muted);font-size:.9rem">Официальная медпрактика · 15+ лет опыта</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="symptoms">
+  <div class="container">
+    <h2 class="section-title">Когда стоит вызвать врача <span data-city-in="">в Шымкенте</span></h2>
+    <p class="section-sub">Не ждите ухудшения — приезжаем в день обращения</p>
+    <div class="symptoms">
+      <div class="symptom"><div class="symptom-num">01</div><h3>Высокая температура у ребёнка</h3><p>Лихорадка, слабость, отказ от еды, судороги — педиатр приедет с жаропонижающими.</p></div>
+      <div class="symptom"><div class="symptom-num">02</div><h3>Сильная боль или недомогание</h3><p>Грипп, ОРВИ, отравление, высокая температура у взрослых — осмотр и лечение дома.</p></div>
+      <div class="symptom"><div class="symptom-num">03</div><h3>Сердце и давление</h3><p>Гипертонический криз, боль в груди, одышка, головокружение — кардиолог с ЭКГ.</p></div>
+      <div class="symptom"><div class="symptom-num">04</div><h3>Травмы и острые состояния</h3><p>Порезы, ожоги, ушибы, гнойные раны, подозрение на аппендицит — хирург на дом.</p></div>
+      <div class="symptom"><div class="symptom-num">05</div><h3>Неврологические симптомы</h3><p>Сильная головная боль, онемение, потеря сознания, судороги — невролог 24/7.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">Почему эффективнее городской скорой</h2>
+    <div class="feature-grid">
+      <div class="feature"><i class="fas fa-user-doctor"></i><h3>Узкие специалисты</h3><p>Приедет именно тот врач, который нужен — не фельдшер.</p></div>
+      <div class="feature"><i class="fas fa-stopwatch"></i><h3>30 минут до вас</h3><p>Среднее время прибытия <span data-city-arrival="">по Шымкенту</span>. Ночью тоже.</p></div>
+      <div class="feature"><i class="fas fa-mobile-screen"></i><h3>Сопровождение бесплатно</h3><p>Врач на связи в WhatsApp до полного выздоровления.</p></div>
+      <div class="feature"><i class="fas fa-kit-medical"></i><h3>С собой всё</h3><p>ЭКГ, УЗИ портативное, анализы, лекарства — лечим сразу.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="doctors">
+  <div class="container">
+    <h2 class="section-title">Врачи, которым доверяют жизнь</h2>
+    <p class="section-sub">Все с лицензией МЗ РК, опытом от 15 лет</p>
+    <div class="doctors">
+      <div class="doctor">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&amp;w=600&amp;auto=format" alt="Педиатр">
+        <h3>Кидирбаева Жазира Сматовна</h3>
+        <p>Педиатр высшей категории, 20 лет опыта</p>
+        <span class="doctor-badge">👩‍⚕️ Автор публикаций</span>
+      </div>
+      <div class="doctor">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&amp;w=600&amp;auto=format" alt="Терапевт">
+        <h3>Аблан Аскар</h3>
+        <p>Врач высшей категории, сертификаты МЗ РК</p>
+        <span class="doctor-badge">⭐ 15+ лет практики</span>
+      </div>
+      <div class="doctor">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&amp;w=600&amp;auto=format" alt="Кардиологи">
+        <h3>Кардиологи и неврологи</h3>
+        <p>Узкие специалисты с выездом 24/7</p>
+        <span class="doctor-badge">🏅 Лицензия РК</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--light)">
+  <div class="container">
+    <h2 class="section-title">Что делаем на дому</h2>
+    <div class="services">
+      <div class="service"><i class="fas fa-stethoscope"></i><div><h3>Осмотр и лечение</h3><p>Полная диагностика, назначение по протоколам МЗ РК, без лишних анализов.</p></div></div>
+      <div class="service"><i class="fas fa-heart-pulse"></i><div><h3>ЭКГ, УЗИ, анализы</h3><p>Привезем портативное оборудование, медсестра возьмет кровь на дому.</p></div></div>
+      <div class="service"><i class="fas fa-comments"></i><div><h3>Онлайн-сопровождение</h3><p>Бесплатно контролируем лечение в мессенджере до выздоровления.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="tel:87003263535" class="btn"><i class="fas fa-headset"></i> Получить консультацию бесплатно</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 class="section-title">4 простых шага до выздоровления</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Звонок</h3><p>Принимаем 24/7, подбираем врача за 2 минуты</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Выезд 30 мин</h3><p>Едем с оборудованием и лекарствами</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Осмотр + лечение</h3><p>Ставим диагноз, начинаем терапию сразу</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Сопровождение</h3><p>Врач на связи до полного выздоровления</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="trust">
+      <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&amp;w=1200&amp;auto=format" alt="Лицензии">
+      <div>
+        <h2 class="section-title" style="text-align:left;margin-bottom:16px">Наши врачи — профессионалы</h2>
+        <p style="color:var(--muted)">Работаем официально, с лицензией. Постоянно учимся, в том числе за рубежом.</p>
+        <ul class="trust-list">
+          <li><i class="fas fa-check-circle"></i> Повышение квалификации каждый год</li>
+          <li><i class="fas fa-check-circle"></i> Современные методики и протоколы МЗ РК</li>
+          <li><i class="fas fa-check-circle"></i> Большой практический стаж от 15 лет</li>
+          <li><i class="fas fa-check-circle"></i> Индивидуальный подход, без назначений «на всякий случай»</li>
+          <li><i class="fas fa-check-circle"></i> 4.9 рейтинг в 2ГИС, 1000+ благодарных отзывов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--light);border-bottom:none">
+  <div class="container">
+    <div class="sick">
+      <i class="fas fa-file-medical"></i>
+      <h2 style="font-size:1.8rem;margin-bottom:10px">Оформляем больничный лист</h2>
+      <p style="color:var(--muted);max-width:600px;margin:0 auto 20px">Официальный электронный ЛВН с QR-кодом. Фиксируется в DamuMed. Врач оформит на дому.</p>
+      <a href="tel:87003263535" class="btn" style="background:var(--primary);color:#fff"><i class="fas fa-file-circle-check" style="color:#fff"></i> Оформить больничный</a>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <h2 class="section-title">Отзывы пациентов</h2>
+    <div class="reviews">
+      <div class="review"><div class="review-header"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&amp;w=200&amp;auto=format" alt="Алия"><div><strong>Алия, <span data-city-name="">Шымкент</span></strong><div class="stars">★★★★★</div></div></div><p>Нужно было сдать анализы, не было сил идти. Медсестра приехала за 40 минут, всё аккуратно.</p><span class="review-tag">Анализ крови на дому</span></div>
+      <div class="review"><div class="review-header"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&amp;w=200&amp;auto=format" alt="Ерлан"><div><strong>Ерлан, <span data-city-name="">Шымкент</span></strong><div class="stars">★★★★★</div></div></div><p>Отравился, врач приехал за полчаса, поставил капельницу. Через час уже легче стало.</p><span class="review-tag">Выезд за 30 минут</span></div>
+      <div class="review"><div class="review-header"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&amp;w=200&amp;auto=format" alt="Дамир"><div><strong>Дамир</strong><div class="stars">★★★★★</div></div></div><p>Вызывали педиатра ночью — приехала быстро, осмотрела дочку, дала четкие рекомендации.</p><span class="review-tag">Педиатр на дом</span></div>
+      <div class="review"><div class="review-header"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&amp;w=200&amp;auto=format" alt="Арман"><div><strong>Арман</strong><div class="stars">★★★★★</div></div></div><p>Порезал руку, не хотел в больницу. Врач обработал, наложил швы аккуратно, всё зажило.</p><span class="review-tag">Хирург на дом</span></div>
+      <div class="review"><div class="review-header"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&amp;w=200&amp;auto=format" alt="Жанна"><div><strong>Жанна</strong><div class="stars">★★★★★</div></div></div><p>Температура ночью 39, врач приехал за 30 минут. Утром уже легче, спасибо!</p><span class="review-tag">Ночной выезд</span></div>
+      <div class="review"><div class="review-header"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&amp;w=200&amp;auto=format" alt="Алина"><div><strong>Алина, <span data-city-name="">Шымкент</span></strong><div class="stars">★★★★★</div></div></div><p>Дочка заболела — педиатр за 20 минут, лечение помогло сразу. Очень внимательная.</p><span class="review-tag">Быстро и качественно</span></div>
+    </div>
+    <div style="text-align:center;margin-top:24px;color:var(--muted)"><i class="fas fa-map-location-dot"></i> 2ГИС рейтинг: <strong style="color:#d97706">4.9 ★</strong> — качество и доверие</div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title">Частые вопросы</h2>
+    <div class="faq">
+      <div class="faq-item"><div class="faq-q">Как вызвать врача на дом? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Позвоните 8 (700) 326-35-35 или напишите в WhatsApp. Оператор 24/7 подберет специалиста и отправит за 30 минут.</div></div>
+      <div class="faq-item"><div class="faq-q">Сколько ждать врача? <i class="fas fa-chevron-down"></i></div><div class="faq-a">В среднем 30 минут <span data-city-arrival="">по Шымкенту</span>. Ночью и в праздники тоже выезжаем.</div></div>
+      <div class="faq-item"><div class="faq-q">Какие врачи доступны? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Терапевт, педиатр, кардиолог, невролог, хирург, инфекционист. Также медсестра, ЭКГ, УЗИ на дому.</div></div>
+      <div class="faq-item"><div class="faq-q">Работаете в пригороде? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Да, по согласованию. Уточните у диспетчера — рассчитаем время и стоимость.</div></div>
+      <div class="faq-item"><div class="faq-q">Можно ночью? <i class="fas fa-chevron-down"></i></div><div class="faq-a">Да, работаем круглосуточно без выходных. Ночные бригады дежурят постоянно.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contacts">
+  <div class="container">
+    <div class="footer-cta">
+      <i class="fas fa-phone-volume" style="font-size:2rem;margin-bottom:10px"></i>
+      <div class="footer-phone">8 (700) 326-35-35</div>
+      <p>Звоните — приедем ночью и в выходные <span data-city-arrival="">по Шымкенту</span></p>
+      <a href="tel:87003263535" class="btn btn-white" style="margin-top:16px"><i class="fas fa-truck-medical"></i> Вызвать врача сейчас</a>
+    </div>
+    <div class="footer-grid">
+      <div><strong>Адрес</strong><br><span data-city-address="">г. Шымкент — выезд по всему городу</span></div>
+      <div><strong>Контакты</strong><br>medline24kz@gmail.com<br>24/7 диспетчер</div>
+      <div><strong>Реквизиты</strong><br>БИН 020620551201<br>ИП Сабитов Н.Н.</div>
+      <div><strong>Лицензия</strong><br>Медицинская практика<br>МЗ РК</div>
+    </div>
+    <div style="border-radius:20px;overflow:hidden;margin:24px 0">
+      <iframe id="cityMap" src="https://yandex.ru/map-widget/v1/?ll=69.5901,42.3417&amp;z=11" width="100%" height="260" frameborder="0" style="border:0"></iframe>
+    </div>
+    <div style="text-align:center;font-size:.85rem;opacity:.7;padding-top:20px;border-top:1px solid #1e293b">
+      © medline24, 2026 · <a href="#" style="color:#cbd5e1">Политика конфиденциальности</a> · <a href="#" style="color:#cbd5e1">Публичная оферта</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="https://wa.me/77474472693?text=Здравствуйте%2C%20нужен%20врач%20на%20дом%20%D0%B2%20%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82%D0%B5" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.innerHTML = navLinks.classList.contains('open') ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+  });
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const a = q.nextElementSibling;
+      const icon = q.querySelector('i');
+      a.classList.toggle('show');
+      icon.classList.toggle('fa-chevron-down');
+      icon.classList.toggle('fa-chevron-up');
+    });
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){e.preventDefault();document.querySelector(id)?.scrollIntoView({behavior:'smooth'});navLinks.classList.remove('open');}
+    })
+  });
+
+  let cities = [];
+  const citySelect = document.getElementById('citySelect');
+  
+  async function loadCities(){
+    const res = await fetch('/api/cities');
+    return await res.json();
+  }
+  
+  function renderOptions(){
+    citySelect.innerHTML = '';
+    cities.forEach(c=>{
+      const o = document.createElement('option');
+      o.value = c.id; o.textContent = c.name;
+      citySelect.appendChild(o);
+    });
+  }
+  
+  function updateCity(city){
+    document.querySelectorAll('[data-city-arrival]').forEach(el=>el.textContent = city.arrival);
+    document.querySelectorAll('[data-city-in]').forEach(el=>el.textContent = city.inCity);
+    document.querySelectorAll('[data-city-name]').forEach(el=>el.textContent = city.name);
+    document.querySelectorAll('[data-city-address]').forEach(el=>el.textContent = city.address);
+    document.getElementById('cityMap').src = 'https://yandex.ru/map-widget/v1/?ll='+city.map+'&z=11';
+    document.title = 'medline24 | Врач на дом '+city.inCity+' — 24/7 за 30 минут';
+    localStorage.setItem('medline24_city', city.id);
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a=>{
+      a.href = 'https://wa.me/77474472693?text=Здравствуйте%2C%20нужен%20врач%20на%20дом%20'+encodeURIComponent(city.inCity);
+    });
+  }
+  
+  (async ()=>{
+    cities = await loadCities();
+    renderOptions();
+    const saved = localStorage.getItem('medline24_city') || 'shymkent';
+    citySelect.value = saved;
+    updateCity(cities.find(c=>c.id===saved) || cities[0]);
+  })();
+  
+  citySelect.addEventListener('change', ()=>{
+    const c = cities.find(x=>x.id===citySelect.value);
+    if(c) updateCity(c);
+  });
+  
+  document.getElementById('adminBtn').addEventListener('click', async ()=>{
+    const a = prompt('Админка medline24\n1 - Добавить город\n2 - Список');
+    if(a==='1'){
+      const name = prompt('Название:');
+      if(!name) return;
+      const city = {
+        id: name.toLowerCase().replace(/\s+/g,''),
+        name,
+        arrival: prompt('по...', 'по '+name),
+        inCity: prompt('в...', 'в '+name),
+        address: prompt('Адрес:', 'г. '+name),
+        map: prompt('координаты:', '0,0')
+      };
+      await fetch('/api/cities',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(city)});
+      cities = await loadCities();
+      renderOptions();
+      alert('Город добавлен на сервер!');
+    } else {
+      alert(cities.map(c=>c.name).join(', '));
+    }
+  });
+</script>
+
+
+</body></html>
