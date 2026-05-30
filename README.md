@@ -1,8 +1,6 @@
-# medline24 - Next.js
+# medline24
+Дизайн сохранен 1в1. Админка на Python Flask.
 
-Deploy to Vercel:
-1. Upload to GitHub
-2. Import to Vercel
-3. Done
+Запуск: pip install -r requirements.txt && python app.py
 
-Admin: /admin
+Деплой на Vercel: залей на GitHub и импортируй.
