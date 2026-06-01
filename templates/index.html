@@ -48,7 +48,7 @@ section{padding:72px 0;border-bottom:1px solid var(--border)}
 .feature{text-align:center;padding:28px;background:#fff;border-radius:var(--radius);border:1px solid var(--border)}
 .feature i{font-size:2.2rem;color:var(--primary);margin-bottom:14px}
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.review{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;line-height:1.6}.review p{margin:12px 0}
+.review{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px}
 footer{background:#0f172a;color:#fff;padding:48px 0}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:24px;font-size:.95rem;opacity:.9}
 .disclaimer{font-size:.8rem;opacity:.7;margin-top:24px;line-height:1.6}
@@ -60,16 +60,9 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 <div class="container nav">
 <a href="/" class="logo"><i class="fas fa-heart-pulse"></i> medline24</a>
 <div style="display:flex;gap:20px;align-items:center">
-<div class="city-dropdown" style="position:relative">
-<button id="cityBtn" style="background:#f8fafc;border:1px solid #e2e8f0;padding:8px 14px;border-radius:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px"><i class="fas fa-location-dot" style="color:#1a73e8"></i> <span>{{ city.name }}</span> <i class="fas fa-chevron-down" style="font-size:.8rem"></i></button>
-<div id="cityMenu" style="display:none;position:absolute;top:110%;right:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,.1);min-width:180px;overflow:hidden;z-index:200">
-{% for c in cities %}
-<a href="/{{ c.id }}" style="display:block;padding:10px 14px;text-decoration:none;color:#0f172a;font-weight:500;{% if c.id == city.id %}background:#f1f5f9{% endif %}">{{ c.name }}{% if c.id == city.id %} ✓{% endif %}</a>
-{% endfor %}
-</div>
-</div>
-<div class="nav-links" id="navLinks" style="display:flex;gap:20px">
-<a href="/admin" style="color:#475569;text-decoration:none;font-weight:500">Админка</a>
+<div class="nav-links" id="navLinks">
+{% for c in cities %}<a href="/{{ c.id }}">{{ c.name }}</a>{% endfor %}
+<a href="/admin">Админка</a>
 </div>
 <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
 </div>
@@ -211,8 +204,6 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </footer>
 
 <script>
-document.getElementById('cityBtn').onclick = () => {document.getElementById('cityMenu').style.display = document.getElementById('cityMenu').style.display === 'block' ? 'none' : 'block';};
-document.addEventListener('click', (e)=>{if(!e.target.closest('.city-dropdown')) document.getElementById('cityMenu').style.display='none'});
 document.getElementById('hamburger').onclick = () => {
   const nav = document.getElementById('navLinks');
   nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
