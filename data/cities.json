@@ -1,5 +1,56 @@
 [
   {
+    "id": "astana",
+    "name": "Астана",
+    "arrival": "по Астане",
+    "inCity": "в Астане",
+    "address": "г. Астана, ул. Кунаева 29/1",
+    "map": "71.470684,51.128229",
+    "seo_title": "Врач на дом в Астане 24/7 — medline24",
+    "seo_description": "Врач на дом в Астане 24/7.",
+    "seo_keywords": "врач на дом астана",
+    "doctors": [
+      {
+        "name": "Алиева Зарина",
+        "spec": "Терапевт, 15 лет",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
+        "badge": "⭐ Опыт"
+      },
+      {
+        "name": "Муратов Данияр",
+        "spec": "Хирург",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
+        "badge": "🔪 Хирург"
+      },
+      {
+        "name": "Ким Елена",
+        "spec": "Педиатр",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
+        "badge": "👩‍⚕️ Детский"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Жанар",
+        "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200",
+        "text": "Помогли при отравлении",
+        "tag": "Срочно"
+      },
+      {
+        "name": "Руслан",
+        "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200",
+        "text": "Хирург обработал рану",
+        "tag": "Хирург"
+      },
+      {
+        "name": "Мадина",
+        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
+        "text": "Дочке лучше вечером",
+        "tag": "Педиатр"
+      }
+    ]
+  },
+  {
     "id": "shymkent",
     "name": "Шымкент",
     "arrival": "по Шымкенту",
@@ -13,19 +64,19 @@
       {
         "name": "Кидирбаева Жазира Сматовна",
         "spec": "Педиатр высшей категории, 20 лет опыта",
-        "photo": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=600",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
         "badge": "👩‍⚕️ Автор публикаций"
       },
       {
         "name": "Аблан Аскар",
         "spec": "Врач высшей категории",
-        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=600",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
         "badge": "⭐ 15+ лет практики"
       },
       {
         "name": "Омаров Тимур",
         "spec": "Кардиолог",
-        "photo": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=600",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
         "badge": "🏅 Опытный специалист"
       }
     ],
@@ -64,19 +115,19 @@
       {
         "name": "Смагулова Айгуль",
         "spec": "Кардиолог, 18 лет",
-        "photo": "https://images.unsplash.com/photo-1594824475545-9c982cf4e9e3?q=80&w=600",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
         "badge": "❤️ Кардиолог"
       },
       {
         "name": "Нурланов Ермек",
         "spec": "Невролог",
-        "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=600",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
         "badge": "🧠 Невролог"
       },
       {
         "name": "Тусупбекова Мадина",
         "spec": "Педиатр",
-        "photo": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=600",
+        "photo": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800",
         "badge": "👶 Детский врач"
       }
     ],
@@ -97,57 +148,6 @@
         "name": "Айгерим",
         "photo": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=200",
         "text": "Педиатр осмотрела сына",
-        "tag": "Педиатр"
-      }
-    ]
-  },
-  {
-    "id": "astana",
-    "name": "Астана",
-    "arrival": "по Астане",
-    "inCity": "в Астане",
-    "address": "г. Астана, ул. Кунаева 29/1",
-    "map": "71.470684,51.128229",
-    "seo_title": "Врач на дом в Астане 24/7 — medline24",
-    "seo_description": "Врач на дом в Астане 24/7.",
-    "seo_keywords": "врач на дом астана",
-    "doctors": [
-      {
-        "name": "Алиева Зарина",
-        "spec": "Терапевт, 15 лет",
-        "photo": "https://images.unsplash.com/photo-1551601651-2a8555f1a136?q=80&w=600",
-        "badge": "⭐ Опыт"
-      },
-      {
-        "name": "Муратов Данияр",
-        "spec": "Хирург",
-        "photo": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=600",
-        "badge": "🔪 Хирург"
-      },
-      {
-        "name": "Ким Елена",
-        "spec": "Педиатр",
-        "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600",
-        "badge": "👩‍⚕️ Детский"
-      }
-    ],
-    "reviews": [
-      {
-        "name": "Жанар",
-        "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200",
-        "text": "Помогли при отравлении",
-        "tag": "Срочно"
-      },
-      {
-        "name": "Руслан",
-        "photo": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200",
-        "text": "Хирург обработал рану",
-        "tag": "Хирург"
-      },
-      {
-        "name": "Мадина",
-        "photo": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200",
-        "text": "Дочке лучше вечером",
         "tag": "Педиатр"
       }
     ]

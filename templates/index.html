@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#1a73e8;--primary-dark:#0d5bbf;--dark:#0f172a;--muted:#475569;--light:#f8fafc;--border:#e2e8f0;--shadow:0 10px 30px rgba(2,6,23,.07);--radius:24px}
+:root{--primary:#0f766e;--primary-dark:#0d5bbf;--dark:#0f172a;--muted:#475569;--light:#f8fafc;--border:#e2e8f0;--shadow:0 10px 30px rgba(2,6,23,.07);--radius:24px}
 body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;line-height:1.5}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 .btn{background:var(--primary);color:#fff;padding:14px 26px;border-radius:999px;font-weight:600;display:inline-flex;align-items:center;gap:10px;text-decoration:none;transition:.2s;box-shadow:0 6px 16px rgba(26,115,232,.25)}
@@ -23,7 +23,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdro
 .logo i{color:var(--primary)}
 .nav-links{display:flex;gap:24px;align-items:center}
 .nav-links a{color:var(--muted);text-decoration:none;font-weight:500}
-.hamburger{display:none;font-size:1.6rem;cursor:pointer}
+.hamburger{display:none}.city-menu summary{list-style:none;cursor:pointer;font-weight:600}.city-menu{position:relative}.city-menu a{display:block;padding:6px 0;text-decoration:none;color:var(--muted)}
 .hero{padding:56px 0}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .urgent{display:inline-flex;align-items:center;gap:8px;background:#fff1f0;color:#d93025;padding:8px 16px;border-radius:999px;font-weight:700;font-size:.9rem;margin-bottom:18px;border:1px solid #fee2e2}
@@ -48,7 +48,7 @@ section{padding:72px 0;border-bottom:1px solid var(--border)}
 .feature{text-align:center;padding:28px;background:#fff;border-radius:var(--radius);border:1px solid var(--border)}
 .feature i{font-size:2.2rem;color:var(--primary);margin-bottom:14px}
 .reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.review{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px}
+.review{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px}.review p{line-height:1.6;margin-top:10px}
 footer{background:#0f172a;color:#fff;padding:48px 0}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:24px;font-size:.95rem;opacity:.9}
 .disclaimer{font-size:.8rem;opacity:.7;margin-top:24px;line-height:1.6}
@@ -61,8 +61,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 <a href="/" class="logo"><i class="fas fa-heart-pulse"></i> medline24</a>
 <div style="display:flex;gap:20px;align-items:center">
 <div class="nav-links" id="navLinks">
-{% for c in cities %}<a href="/{{ c.id }}">{{ c.name }}</a>{% endfor %}
-<a href="/admin">Админка</a>
+<details class="city-menu"><summary>{{ city.name }} <i class="fas fa-chevron-down"></i></summary>{% for c in cities %}<a href="/{{ c.id }}">{% if c.id==city.id %}✓ {% endif %}{{ c.name }}</a>{% endfor %}</details>
 </div>
 <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
 </div>
@@ -198,7 +197,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 Информация на сайте не является публичной офертой. Точная стоимость и возможность выезда зависят от адреса, времени обращения, состояния пациента и доступности специалиста. При состояниях, угрожающих жизни, необходимо обращаться в службу экстренной помощи 103.
 </div>
 <div style="text-align:center;font-size:.85rem;opacity:.7;padding-top:20px;border-top:1px solid #1e293b;margin-top:20px">
-© medline24, 2026 · <a href="#" style="color:#cbd5e1">Политика конфиденциальности</a>
+
 </div>
 </div>
 </footer>
