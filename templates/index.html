@@ -100,7 +100,11 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
-<div style="padding:8px 0 12px;font-weight:700;color:var(--muted)">Выберите город</div>
+<a href="#doctors">Специалисты</a>
+<a href="#reviews">Отзывы</a>
+<a href="#features">Почему нам доверяют</a>
+<a href="#contacts">Контакты</a>
+</div>
 {% for c in cities %}<a href="/{{ c.id }}">{{ c.name }}</a>{% endfor %}
 </div>
 </header>
@@ -152,7 +156,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </section>
 
-<section>
+<section id="features">
 <div class="container">
 <h2 class="section-title">Почему нам доверяют</h2>
 <div class="feature-grid">
@@ -213,7 +217,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </section>
 
-<footer>
+<footer id="contacts">
 <div class="container">
 <div style="text-align:center">
 <i class="fas fa-phone-volume" style="font-size:2rem;margin-bottom:10px"></i>
