@@ -23,7 +23,8 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdro
 .logo i{color:var(--primary)}
 .nav-right{display:flex;gap:16px;align-items:center}
 .city-select{position:relative}
-.city-btn{display:flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--border);border-radius:999px;background:#fff;font-weight:600;cursor:pointer}
+.city-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border:1.5px solid #e6ecf5;border-radius:24px;background:#fff;font-weight:600;font-size:1.05rem;color:var(--primary);cursor:pointer;min-width:180px;box-shadow:0 2px 8px rgba(2,6,23,.04)}
+.city-btn:hover{border-color:#cbd5e1}
 .city-btn i{color:var(--primary)}
 .city-dropdown{position:absolute;top:110%;right:0;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);min-width:180px;padding:8px;display:none;z-index:200}
 .city-dropdown a{display:block;padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--dark);font-weight:500}
@@ -66,11 +67,16 @@ section{padding:72px 0;border-bottom:1px solid var(--border)}
 footer{background:#0f172a;color:#fff;padding:48px 0}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:24px;font-size:.95rem;opacity:.9}
 .disclaimer{font-size:.8rem;opacity:.7;margin-top:24px;line-height:1.6}
+
+.whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:1000;background:#25D366;color:#fff;padding:16px 22px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.2);display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1rem;transition:.2s}
+.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.whatsapp-float i{font-size:1.4rem}
 @media(max-width:900px){
 .hero-grid{grid-template-columns:1fr}
 .hamburger{display:block}
 .nav-right .city-select{display:none}
 .mobile-menu.show{display:block}
+.whatsapp-float{bottom:16px;right:16px;padding:14px 18px}
 }
 @media(max-width:480px){
 .container{padding:0 16px}
@@ -85,7 +91,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 <a href="/" class="logo"><i class="fas fa-heart-pulse"></i> medline24</a>
 <div class="nav-right">
 <div class="city-select">
-<button class="city-btn" id="cityBtn"><i class="fas fa-location-dot"></i> {{ city.name }} <i class="fas fa-chevron-down" style="font-size:.8rem"></i></button>
+<button class="city-btn" id="cityBtn">{{ city.name }}</button>
 <div class="city-dropdown" id="cityDropdown">
 {% for c in cities %}<a href="/{{ c.id }}" class="{% if c.id==city.id %}active{% endif %}">{{ c.name }}</a>{% endfor %}
 </div>
@@ -247,5 +253,9 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.onclick = () => mobileMenu.classList.toggle('show');
 </script>
+
+<a href="https://wa.me/77474472693?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="whatsapp-float" aria-label="WhatsApp">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</a>
 </body>
 </html>
