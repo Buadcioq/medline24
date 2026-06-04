@@ -74,9 +74,10 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 @media(max-width:900px){
 .hero-grid{grid-template-columns:1fr}
 .hamburger{display:block}
-.nav-right .city-select{display:none}
+.nav-right .city-select{display:block}
 .mobile-menu.show{display:block}
 .whatsapp-float{bottom:16px;right:16px;padding:14px 18px}
+.city-btn{padding:10px 20px;font-size:1rem;min-width:auto}
 }
 @media(max-width:480px){
 .container{padding:0 16px}
@@ -100,11 +101,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
-<a href="#doctors">Специалисты</a>
-<a href="#reviews">Отзывы</a>
-<a href="#features">Почему нам доверяют</a>
-<a href="#contacts">Контакты</a>
-</div>
+<div style="padding:8px 0 12px;font-weight:700;color:var(--muted)">Выберите город</div>
 {% for c in cities %}<a href="/{{ c.id }}">{{ c.name }}</a>{% endfor %}
 </div>
 </header>
@@ -156,7 +153,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </section>
 
-<section id="features">
+<section>
 <div class="container">
 <h2 class="section-title">Почему нам доверяют</h2>
 <div class="feature-grid">
@@ -217,7 +214,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </section>
 
-<footer id="contacts">
+<footer>
 <div class="container">
 <div style="text-align:center">
 <i class="fas fa-phone-volume" style="font-size:2rem;margin-bottom:10px"></i>
