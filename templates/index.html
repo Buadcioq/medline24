@@ -101,12 +101,15 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
-<div style="padding:8px 0 12px;font-weight:700;color:var(--muted)">Выберите город</div>
-{% for c in cities %}<a href="/{{ c.id }}">{{ c.name }}</a>{% endfor %}
+<a href="#hero">Главная</a>
+<a href="#advantages">Преимущества</a>
+<a href="#doctors">Специалисты</a>
+<a href="#reviews">Отзывы</a>
+<a href="#contacts">Контакты</a>
 </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
 <div class="container hero-grid">
 <div>
 <span class="urgent"><i class="fas fa-bolt"></i> Среднее время прибытия — от 30 минут {{ city.arrival }}</span>
@@ -153,7 +156,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </section>
 
-<section>
+<section id="advantages">
 <div class="container">
 <h2 class="section-title">Почему нам доверяют</h2>
 <div class="feature-grid">
@@ -214,7 +217,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 </section>
 
-<footer>
+<footer id="contacts">
 <div class="container">
 <div style="text-align:center">
 <i class="fas fa-phone-volume" style="font-size:2rem;margin-bottom:10px"></i>
@@ -253,6 +256,9 @@ if(cityBtn){
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.onclick = () => mobileMenu.classList.toggle('show');
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.onclick = () => mobileMenu.classList.remove('show');
+});
 </script>
 
 <a href="https://wa.me/77474472693?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="whatsapp-float" aria-label="WhatsApp">
