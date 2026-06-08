@@ -149,7 +149,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <a href="tel:87079813662" class="btn"><i class="fas fa-truck-medical"></i> Вызвать врача</a>
-<a href="https://wa.me/+77079813662?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="btn btn-outline"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+<a href="https://wa.me/87079813662?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="btn btn-outline"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
 </div>
 </div>
 <div class="hero-img">
@@ -281,7 +281,7 @@ footer{background:#0f172a;color:#fff;padding:48px 0}
 <i class="fas fa-phone-volume" style="font-size:2rem;margin-bottom:10px"></i>
 <div style="font-size:2rem;font-weight:800"><a href="tel:87079813662" style="color:#fff;text-decoration:none">8 (707) 981-36-62</a></div>
 <p style="opacity:.8">Звоните — приедем {{ city.arrival }}</p>
-<a href="https://wa.me/+77079813662?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="btn" style="background:#fff;color:#0f172a;margin-top:16px"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
+<a href="https://wa.me/87079813662?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="btn" style="background:#fff;color:#0f172a;margin-top:16px"><i class="fab fa-whatsapp"></i> Написать в WhatsApp</a>
 </div>
 <div class="footer-grid">
 <div><strong>Адрес</strong><br>{{ city.address }}</div>
@@ -339,14 +339,14 @@ if (leadForm) {
       leadForm.reset();
       leadStatus.textContent = 'Заявка отправлена. Мы свяжемся с вами.';
     } catch (error) {
-      leadStatus.textContent = 'Не удалось отправить заявку. Позвоните нам: 8 (707) 981-36-62.';
+      leadStatus.textContent = 'Не удалось отправить заявку. Проверьте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID или позвоните: 8 (707) 981-36-62.';
     }
   });
 }
 
 </script>
 
-<a href="https://wa.me/+77079813662?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="whatsapp-float" aria-label="WhatsApp">
+<a href="https://wa.me/87079813662?text=Здравствуйте!%20Хочу%20вызвать%20врача%20на%20дом%20{{ city.inCity | replace('в ','в%20') | replace(' ','%20') }}.%20Подскажите,%20пожалуйста,%20стоимость%20и%20ближайшее%20время%20выезда." class="whatsapp-float" aria-label="WhatsApp">
 <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
 </body>

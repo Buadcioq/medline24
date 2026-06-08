@@ -42,8 +42,8 @@ def api_lead():
     if not phone:
         return jsonify({"ok": False, "error": "phone_required"}), 400
 
-    token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip()
+    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip()
 
     if not token or not chat_id:
         return jsonify({"ok": False, "error": "telegram_not_configured"}), 500
@@ -58,8 +58,7 @@ def api_lead():
 
     payload = urllib.parse.urlencode({
         "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "HTML"
+        "text": message
     }).encode("utf-8")
 
     try:
@@ -69,12 +68,26 @@ def api_lead():
             headers={"Content-Type": "application/x-www-form-urlencoded"}
         )
         with urllib.request.urlopen(req, timeout=10) as response:
+            body = response.read().decode("utf-8", errors="replace")
             if response.status >= 400:
-                return jsonify({"ok": False, "error": "telegram_error"}), 500
-    except Exception:
-        return jsonify({"ok": False, "error": "telegram_error"}), 500
+                return jsonify({"ok": False, "error": "telegram_error", "details": body}), 500
+    except urllib.error.HTTPError as e:
+        details = e.read().decode("utf-8", errors="replace")
+        return jsonify({"ok": False, "error": "telegram_error", "details": details}), 500
+    except Exception as e:
+        return jsonify({"ok": False, "error": "telegram_error", "details": str(e)}), 500
 
     return jsonify({"ok": True})
+
+@app.route("/api/lead-test")
+def api_lead_test():
+    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip()
+    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip()
+    return jsonify({
+        "ok": bool(token and chat_id),
+        "telegram_bot_token_set": bool(token),
+        "telegram_chat_id_set": bool(chat_id)
+    })
 
 @app.route("/admin")
 def admin():
