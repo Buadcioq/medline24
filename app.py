@@ -86,23 +86,6 @@ def api_lead():
 
     return jsonify({"ok": True})
 
-@app.route("/api/lead-test")
-def api_lead_test():
-    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip().strip('"').strip("'")
-    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip().strip('"').strip("'")
-    return jsonify({
-        "ok": bool(token and chat_id),
-        "telegram_bot_token_set": bool(token),
-        "telegram_chat_id_set": bool(chat_id),
-        "telegram_chat_id_preview": chat_id[:4] + "..." if chat_id else ""
-    })
-
-@app.route("/api/lead-test-send")
-def api_lead_test_send():
-    ok, details = send_telegram_message("Тестовая заявка с Medline24.kz. Telegram подключен корректно.")
-    status = 200 if ok else 500
-    return jsonify({"ok": ok, "details": details}), status
-
 @app.route("/admin")
 def admin():
     return render_template("admin.html")
