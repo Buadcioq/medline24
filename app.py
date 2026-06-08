@@ -31,34 +31,17 @@ def city_page(city_id):
     return render_template("index.html", city=city, cities=load_cities())
 
 
-@app.route("/api/lead", methods=["POST"])
-def api_lead():
-    data = request.get_json(silent=True) or {}
-    name = (data.get("name") or "").strip()
-    phone = (data.get("phone") or "").strip()
-    city_name = (data.get("city") or "").strip()
-    comment = (data.get("comment") or "").strip()
 
-    if not phone:
-        return jsonify({"ok": False, "error": "phone_required"}), 400
-
-    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip()
-    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip()
+def send_telegram_message(text):
+    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip().strip('"').strip("'")
+    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip().strip('"').strip("'")
 
     if not token or not chat_id:
-        return jsonify({"ok": False, "error": "telegram_not_configured"}), 500
-
-    message = (
-        "📩 Новая заявка с Medline24.kz\n\n"
-        f"Имя: {name or 'Не указано'}\n"
-        f"Телефон: {phone}\n"
-        f"Город: {city_name or 'Не указан'}\n"
-        f"Комментарий: {comment or 'Не указан'}"
-    )
+        return False, "telegram_not_configured"
 
     payload = urllib.parse.urlencode({
         "chat_id": chat_id,
-        "text": message
+        "text": text
     }).encode("utf-8")
 
     try:
@@ -70,24 +53,55 @@ def api_lead():
         with urllib.request.urlopen(req, timeout=10) as response:
             body = response.read().decode("utf-8", errors="replace")
             if response.status >= 400:
-                return jsonify({"ok": False, "error": "telegram_error", "details": body}), 500
+                return False, body
+        return True, "sent"
     except urllib.error.HTTPError as e:
         details = e.read().decode("utf-8", errors="replace")
-        return jsonify({"ok": False, "error": "telegram_error", "details": details}), 500
+        return False, details
     except Exception as e:
-        return jsonify({"ok": False, "error": "telegram_error", "details": str(e)}), 500
+        return False, str(e)
+
+@app.route("/api/lead", methods=["POST"])
+def api_lead():
+    data = request.get_json(silent=True) or {}
+    name = (data.get("name") or "").strip()
+    phone = (data.get("phone") or "").strip()
+    city_name = (data.get("city") or "").strip()
+    comment = (data.get("comment") or "").strip()
+
+    if not phone:
+        return jsonify({"ok": False, "error": "phone_required"}), 400
+
+    message = (
+        "Новая заявка с Medline24.kz\n\n"
+        f"Имя: {name or 'Не указано'}\n"
+        f"Телефон: {phone}\n"
+        f"Город: {city_name or 'Не указан'}\n"
+        f"Комментарий: {comment or 'Не указан'}"
+    )
+
+    ok, details = send_telegram_message(message)
+    if not ok:
+        return jsonify({"ok": False, "error": "telegram_error", "details": details}), 500
 
     return jsonify({"ok": True})
 
 @app.route("/api/lead-test")
 def api_lead_test():
-    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip()
-    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip()
+    token = (os.environ.get("TELEGRAM_BOT_TOKEN") or "").strip().strip('"').strip("'")
+    chat_id = (os.environ.get("TELEGRAM_CHAT_ID") or "").strip().strip('"').strip("'")
     return jsonify({
         "ok": bool(token and chat_id),
         "telegram_bot_token_set": bool(token),
-        "telegram_chat_id_set": bool(chat_id)
+        "telegram_chat_id_set": bool(chat_id),
+        "telegram_chat_id_preview": chat_id[:4] + "..." if chat_id else ""
     })
+
+@app.route("/api/lead-test-send")
+def api_lead_test_send():
+    ok, details = send_telegram_message("Тестовая заявка с Medline24.kz. Telegram подключен корректно.")
+    status = 200 if ok else 500
+    return jsonify({"ok": ok, "details": details}), status
 
 @app.route("/admin")
 def admin():
